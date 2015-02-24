@@ -1,0 +1,93 @@
+@import "foundation_and_overrides";
+@import url(http://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light|Roboto:400,900|Droid+Sans:400,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Signika:700); 
+
+h1, h2, h3, h4, h5 ,h6 {
+  text-align: center;
+  color: rgba(10,10,10,1) !important;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  -webkit-text-stroke: 1px #008CBA !important;
+  text-shadow: -1px -1px 2px #008CBA, 1px -1px 2px #008CBA, -1px 1px 2px #008CBA, 1px 1px 2px #008CBA;
+}
+label {
+  color: #008CBA !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+input {
+  border-color: #008CBA !important;
+}
+input:focus {
+    box-shadow: 0px 0px 5px #008CBA !important;
+}
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#error_explanation {
+  color: red;
+  ul {
+    color: #008CBA;
+    margin: 0 0 30px 0;
+  }
+}
+small.error {
+  background-color: #008CBA !important;
+}
+input {
+  height: auto !important;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+.row {
+    max-width: 90vw;
+}
+.center {
+  text-align: center;
+  }
+hr {
+  border-color: #008CBA !important;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+

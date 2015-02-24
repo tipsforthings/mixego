@@ -18,6 +18,8 @@ gem 'will_paginate'
 gem 'faker',                   '1.4.2'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
+gem 'simple_form'
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug',      '3.4.0'

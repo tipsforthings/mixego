@@ -1,2 +1,18 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign Up') %>
+
+<div class="row">
+  <div class="medium-6 medium-offset-3 columns center">
+    <h1>Sign Up</h1>
+    <hr />
+
+    <%= simple_form_for @user do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.input :username, placeholder: "Username" %>
+      <%= f.input :email, placeholder: "Email" %>
+      <%= f.input :password, placeholder: "Password" %>
+      <%= f.input :password_confirmation, placeholder: "Password Confirmation" %>
+      <%= f.button :submit, label: "Create Account", class: "button expand radius" %>
+    <% end %>    
+  </div>
+</div>
+
