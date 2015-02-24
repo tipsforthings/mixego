@@ -8,6 +8,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, user: { username:  "", email: "user@invalid", password: "foo", password_confirmation: "bar" }
     end
     assert_template 'users/new'
+    assert_select 'small.error'
   end
 
   test "valid signup information" do
