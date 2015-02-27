@@ -10,7 +10,17 @@ User.create!(username:  "Alex Scott",
              email: "alex@alxs.co.uk",
              password:              "claire0567",
              password_confirmation: "claire0567",
-             admin: true)
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+User.create!(username:  "Alex",
+             email: "alex.scott@tipsforthings.com",
+             password:              "claire0567",
+             password_confirmation: "claire0567",
+             activated: true,
+             activated_at: Time.zone.now)
+
 
 
 99.times do |n|
