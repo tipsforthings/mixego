@@ -1,0 +1,20 @@
+<% provide(:title, "Edit user") %>
+
+<div class="row">
+  <div class="medium-6 medium-offset-3 columns center">
+    <h1>Update your profile</h1>
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :username, placeholder: "Username" %>
+      <%= f.input :email, placeholder: "Email" %>
+      <%= f.input :password, placeholder: "Password" %>
+      <%= f.input :password_confirmation, placeholder: "Password Confirmation" %>
+      <%= f.button :submit, label: "Submit", class: "button expand radius" %>
+    <% end %>    
+
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target=_blank>change</a>
+    </div>
+  </div>
+</div>
+

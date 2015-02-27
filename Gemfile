@@ -20,6 +20,7 @@ gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
 gem 'simple_form'
 gem 'country_select'
+gem 'foundation-will_paginate'
 
 group :development, :test do
   gem 'byebug',      '3.4.0'

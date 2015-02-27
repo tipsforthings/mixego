@@ -4,12 +4,10 @@
 
 h1, h2, h3, h4, h5 ,h6 {
   text-align: center;
-  color: rgba(10,10,10,1) !important;
+  color: #008CBA !important;
   line-height: 1.5;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  -webkit-text-stroke: 1px #008CBA !important;
-  text-shadow: -1px -1px 2px #008CBA, 1px -1px 2px #008CBA, -1px 1px 2px #008CBA, 1px 1px 2px #008CBA;
 }
 label {
   color: #008CBA !important;
@@ -36,13 +34,19 @@ aside {
       line-height: 1;
     }
     h1 {
-      font-size: 1.4em;
+      font-size: 1.75em;
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
     }
+    p {
+      float: left;
+      width: 100%;
+    }
   }
+}
+.wordwrap { 
 }
 input {
   border-color: #008CBA !important;
@@ -90,4 +94,14 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
+/* Users index */
 
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #008CBA;
+  }
+}
