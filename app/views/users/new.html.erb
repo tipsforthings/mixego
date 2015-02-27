@@ -6,13 +6,13 @@
     <hr />
 
     <%= simple_form_for @user do |f| %>
-      <%= render 'shared/error_messages' %>
       <%= f.input :username, placeholder: "Username" %>
       <%= f.input :email, placeholder: "Email" %>
       <%= f.input :password, placeholder: "Password" %>
       <%= f.input :password_confirmation, placeholder: "Password Confirmation" %>
       <%= f.button :submit, label: "Create Account", class: "button expand radius" %>
     <% end %>    
+    <p>or<br /><%= link_to "Login now!", login_path %></p>
   </div>
 </div>
 

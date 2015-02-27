@@ -10,13 +10,35 @@
 </ul> 
 <section class="top-bar-section"> 
 <!-- Right Nav Section --> 
+
+
+
 <ul class="right"> 
-
-<li class="active">
-<%= link_to "Sign Up", signup_path %>
-</li>
-
- 
+  <% if logged_in? %>
+    <li><%= link_to "Users", '#' %></li>
+    <li class="has-dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Account <b class="caret"></b>
+      </a>
+      <ul class="dropdown">
+        <li>
+          <%= link_to "Profile", current_user %>
+        </li>
+        <li>
+          <%= link_to "Settings", '#' %>
+        </li>
+        <li class="divider">
+        </li>
+        <li class="active">
+          <%= link_to "Logout", logout_path, method: "delete" %>
+        </li>
+      </ul>
+    </li>
+  <% else %>
+    <li class="active">
+      <%= link_to "Sign Up", signup_path %>
+    </li>
+  <% end %>
 </ul> 
 <!-- Left Nav Section --> 
 <ul class="left"> 

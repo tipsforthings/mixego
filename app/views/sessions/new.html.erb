@@ -1,0 +1,28 @@
+<% provide(:title, 'Login') %>
+
+<div class="row">
+  <div class="medium-6 medium-offset-3 columns center">
+    <h1>Login</h1>
+    <hr />
+    <% flash.each do |message_type, message| %>
+      <div class="alert-box alert radius <%= message_type %>"><%= message %></div>
+    <% end %>
+
+    <%= simple_form_for :session do |f| %>
+      <%= f.input :email, placeholder: "Email" %>
+      <%= f.input :password, placeholder: "Password" %>
+      <%= f.button :submit, :value => "Login", class: "button expand radius" %>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <span>Remember me on this computer</span>
+        <%= f.check_box :remember_me %>
+      <% end %>
+    <% end %>  
+    <p>or
+      <br />
+      <%= link_to "Sign up now!", signup_path %>
+    </p>
+
+  
+  </div>
+</div>
+

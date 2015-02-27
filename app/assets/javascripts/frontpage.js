@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.min
+//= require supersized.3.2.7.min
+//= require frontpage.supersized
+//= require supersized.shutter
 //= require foundation
 //= require turbolinks
-//= require supersized.3.2.7
 
 $(function(){ $(document).foundation(); });

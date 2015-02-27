@@ -50,7 +50,9 @@ h2 {
   padding: 10px;
   text-align: center;
 }
-
+abbr {
+  color: #008CBA;
+}
 .frontpage-row  h1,
 .frontpage-row  h2,
 .frontpage-row  h3 {
@@ -115,10 +117,93 @@ h2 {
     display: inherit;
 }
 }
-	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(../img/progress.gif) no-repeat center center;}
-	
-	#supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
-		#supersized img{ width:auto; height:auto; position:relative; outline:none; border:none; }
-		
-		#supersized a { z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; display:block; }
-			#supersized a.image-loading { background:#111 url(../img/progress.gif) no-repeat center center; width:100%; height:100%; }
+
+h1, h2, h3, h4, h5 ,h6 {
+  text-align: center;
+  color: rgba(10,10,10,1) !important;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  -webkit-text-stroke: 1px #008CBA !important;
+  text-shadow: -1px -1px 2px #008CBA, 1px -1px 2px #008CBA, -1px 1px 2px #008CBA, 1px 1px 2px #008CBA;
+}
+label {
+  color: #008CBA !important;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+input {
+  border-color: #008CBA !important;
+}
+input:focus {
+    box-shadow: 0px 0px 5px #008CBA !important;
+}
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#error_explanation {
+  color: red;
+  ul {
+    color: #008CBA;
+    margin: 0 0 30px 0;
+  }
+}
+small.error {
+  background-color: #008CBA !important;
+}
+input {
+  height: auto !important;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+.row {
+    max-width: 90vw;
+}
+.center {
+  text-align: center;
+  }
+hr {
+  border-color: #008CBA !important;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
