@@ -1,0 +1,16 @@
+<% provide(:title, "Forgot password") %>
+
+<div class="row">
+  <div class="medium-6 medium-offset-3 columns center">
+    <h3>Forgot password</h3>
+    <hr />
+    <% flash.each do |message_type, message| %>
+      <div class="alert-box alert radius <%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= simple_form_for(:password_reset, url: password_resets_path) do |f| %>
+      <%= f.input :email, placeholder: "Email" %>
+
+      <%= f.button :submit, value: "Reset password", class: "button expand radius" %>
+    <% end %>
+  </div>
+</div>
