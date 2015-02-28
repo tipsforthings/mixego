@@ -5,7 +5,7 @@
     <h1>Login</h1>
     <hr />
     <% flash.each do |message_type, message| %>
-      <div class="alert-box alert radius <%= message_type %>"><%= message %></div>
+      <div class="alert-box radius <%= message_type %>"><%= message %></div>
     <% end %>
 
     <%= simple_form_for :session do |f| %>

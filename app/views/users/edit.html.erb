@@ -4,6 +4,7 @@
   <div class="medium-6 medium-offset-3 columns center">
     <h1>Update your profile</h1>
     <%= simple_form_for @user do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
       <%= f.input :username, placeholder: "Username" %>
       <%= f.input :email, placeholder: "Email" %>
       <%= f.input :password, placeholder: "Password" %>
