@@ -4,11 +4,9 @@ jQuery(function($){
 	
 		slideshow               :   1,
 		autoplay				:	1,
-		random          : 1,
-		start_slide             :   1,
 		stop_loop				:	0,
-		slide_interval          :   3500,
-		transition              :   6,
+		slide_interval          :   2500,
+		transition              :   1,
 		transition_speed		:	2500,
 		new_window				:	0,
 		pause_hover             :   0,

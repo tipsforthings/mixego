@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "frontpage" %>
+    <%= stylesheet_link_tag "frontpage" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
 		
@@ -19,7 +19,7 @@
     </div>
 
 
-    <%= javascript_include_tag "frontpage", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "frontpage" %>
 
 
   </body>
