@@ -1,0 +1,15 @@
+<%= simple_form_for(@track) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.label :genre %><br>
+    <%= f.select(:genre_id, options_from_collection_for_select(Genre.all, :id, :name), {:prompt => 'Please Choose'}, :class => "form-control") %>    
+    <%= f.input :description %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

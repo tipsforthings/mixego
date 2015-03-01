@@ -18,6 +18,7 @@ User.create!(username:  "Alex",
              email: "alex.scott@tipsforthings.com",
              password:              "claire0567",
              password_confirmation: "claire0567",
+             admin: true,
              activated: true,
              activated_at: Time.zone.now)
 
@@ -43,8 +44,45 @@ end
 # Following relationships
 users = User.all
 user  = users.first
-following = users[2..50]
-followers = users[3..40]
+following = users[2..100]
+followers = users[2..100]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+genres = ["Alternative Rock", 
+          "Ambient",
+          "Bounce", 
+          "Classical", 
+          "Country", 
+          "Dance & EDM", 
+          "Dancehall", 
+          "Deep House", 
+          "Disco", 
+          "Drum & Bass", 
+          "Dubstep", 
+          "Electronic", 
+          "Folk & Singer-Songwrites",
+          "Hardcore", 
+          "Hip Hop & Rap", 
+          "House", 
+          "Indie", 
+          "Jazz & Blues", 
+          "Latin", 
+          "Metal",
+          "Minimal", 
+          "Piano", 
+          "Pop", 
+          "R&B", 
+          "Reggae", 
+          "Reggaeton", 
+          "Rock", 
+          "Soul", 
+          "Soundtrack", 
+          "Techno", 
+          "Tech House",
+          "Trance", 
+          "Trap", 
+          "Trip Hop", 
+          "World"]
+genres.each{|d| Genre.where(:name => d).first_or_create}
 

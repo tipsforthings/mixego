@@ -1,12 +1,18 @@
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
+<% provide(:title, 'All Users') %>
 <div class="row">
-  <div class="medium-10 medium-offset-1 columns">
+  <aside class="medium-4 columns">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+  </aside>
+  <div class="medium-8 columns">
+<h2 class="center">All Users</h2>
 <%= foundation_paginate @users %>
 <ul class="users">
-  <% @users.each do |user| %>
     <%= render @users %>
-  <% end %>
 </ul>
 <br />
 <%= foundation_paginate @users %>

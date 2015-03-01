@@ -3,7 +3,6 @@
 @import url(http://fonts.googleapis.com/css?family=Signika:700); 
 
 h1, h2, h3, h4, h5 ,h6 {
-  text-align: center;
   color: #008CBA !important;
   line-height: 1.5;
   font-family: 'Roboto', sans-serif;
@@ -14,6 +13,13 @@ label {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+}
+.container {
+  border-top: 1px solid #008CBA;
+}
+.brand {
+  -webkit-text-stroke: 1px #008CBA !important;
+  text-shadow: -1px -1px 2px #008CBA, 1px -1px 2px #008CBA, -1px 1px 2px #008CBA, 1px 1px 2px #008CBA;
 }
 /* sidebar */
 
@@ -84,8 +90,11 @@ input {
 }
 
 .stats {
+  width: 100%;
   overflow: auto;
-  margin-top: 0;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   a {
     float: left;
@@ -187,4 +196,7 @@ span.picture {
   input {
     border: 0;
   }
+}
+.center {
+  text-align: center;
 }
