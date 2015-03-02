@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301015314) do
+ActiveRecord::Schema.define(version: 20150301141007) do
+
+  create_table "examples", force: :cascade do |t|
+    t.string   "check"
+    t.text     "it"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
@@ -44,14 +51,14 @@ ActiveRecord::Schema.define(version: 20150301015314) do
 
   create_table "tracks", force: :cascade do |t|
     t.string   "title"
-    t.text     "description"
+    t.string   "description"
     t.integer  "genre_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "tracks", ["user_id", "created_at", "genre_id"], name: "index_tracks_on_user_id_and_created_at_and_genre_id"
+  add_index "tracks", ["user_id", "created_at"], name: "index_tracks_on_user_id_and_created_at"
   add_index "tracks", ["user_id"], name: "index_tracks_on_user_id"
 
   create_table "users", force: :cascade do |t|

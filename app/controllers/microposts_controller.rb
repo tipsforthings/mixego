@@ -1,11 +1,16 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:index, :create, :destroy]
   before_action :correct_user,   only: :destroy
 
+  def index
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at).page params[:page]
+  end
+  
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Post created!"
       redirect_to root_url
     else
       @feed_items = []

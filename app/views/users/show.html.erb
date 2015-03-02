@@ -1,6 +1,6 @@
 <% provide(:title, @user.username) %>
 <div class="row">
-  <aside class="medium-4 columns">
+  <aside class="medium-3 columns">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
@@ -12,15 +12,25 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
-  <div class="medium-8 columns">
+  <div class="medium-6 columns">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h2 class="center">Posts</h2>
-      <%= foundation_paginate @microposts %>
+    <% if @user.tracks.any? %>
+      <br />
+      <%= paginate @tracks, :window => 1, :param_name => :tracks %>
       <ol class="microposts">
-        <%= render @microposts %>
+      <h6 class="subheader center">Audio Feed</h6>
+        <%= render @tracks %>
       </ol>
-      <%= foundation_paginate @microposts %>
     <% end %>
   </div>
+  <bside class="medium-3 columns">
+    <% if @user.microposts.any? %>
+      <br />
+      <%= paginate @microposts, :window => 0, :param_name => :feed %>
+      <ol class="microposts">
+      <h6 class="subheader center">Posts</h6>
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </bside>
 </div>

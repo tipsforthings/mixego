@@ -15,5 +15,9 @@
 //= require foundation
 //= require turbolinks
 //= require supersized
+//= require jquery.infinitescroll
 
 $(function(){ $(document).foundation(); });
+
+
+

@@ -8,12 +8,51 @@ h1, h2, h3, h4, h5 ,h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
 }
+#feed {
+  margin: 0;
+  width: 100%;
+  scrollbar-face-color: #008CBA;
+  li {
+    width:95%;
+    float: left;
+  }
+}
+.alert-box {
+  margin-top: 20px !important;
+}
+.alert-box.success {
+    background-color: #008CBA;
+    border-color: #008CBA;
+    color: #FFF;
+}
+.alert-box.alert {
+    background-color: #FFF;
+    border-color: #FFF;
+    color: #F04124;
+}
+.jspTrack
+{
+    background: #b46868; /* changed from #dde */
+    position: relative;
+}
+ 
+.jspDrag
+{
+    background: rgba(0,0,0,0.2); /* changed from #bbd */
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
 label {
   color: #008CBA !important;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
 }
+.top-bar {
+    box-shadow: 0px 0px 12px #008CBA;
+} 
 .container {
   border-top: 1px solid #008CBA;
 }
@@ -22,7 +61,18 @@ label {
   text-shadow: -1px -1px 2px #008CBA, 1px -1px 2px #008CBA, -1px 1px 2px #008CBA, 1px 1px 2px #008CBA;
 }
 /* sidebar */
-
+.subheader {
+    line-height: 1.0;
+    color: #6F6F6F !important;
+    font-weight: normal;
+    font-size: small;
+    a {
+      line-height: 1.0;
+      color: #008CBA !important;
+      font-weight: normal;
+      font-size: small;
+    }
+}
 aside {
   section.user_info {
     margin-top: 20px;
@@ -107,7 +157,7 @@ input {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: #008CBA;
     }
   }
   strong {

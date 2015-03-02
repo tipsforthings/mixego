@@ -5,12 +5,13 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @users = User.paginate(page: params[:page])
+    @users = User.all.page params[:page]
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.page params[:feed]
+    @tracks = @user.tracks.page params[:tracks]
   end
 
   def new
@@ -49,17 +50,21 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def index
+    @user = current_user
+    @users = User.all.page params[:page]
+  end
   def following
     @title = "Following"
     @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following.page params[:page]
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.page params[:page]
     render 'show_follow'
   end
 

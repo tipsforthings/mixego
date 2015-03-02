@@ -1,8 +1,10 @@
 <% if @feed_items.any? %>
   <br />
-  <%= foundation_paginate @feed_items %>
-  <ol class="microposts">
-    <%= render @feed_items %>
-  </ol>
-  <%= foundation_paginate @feed_items %>
+      <%= paginate @feed_items, :window => 0, :param_name => :feed %>
+      <ol id="posts" class="microposts">
+      <h4 class="subheader center">Feed</h4>
+        <%= render @feed_items %>
+      </ol>
+      <%= paginate @feed_items, :window => 1, :param_name => :feed %>
+  
 <% end %>

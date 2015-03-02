@@ -1,0 +1,27 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="medium-4 columns">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
+    <div class="medium-8 columns">
+
+      <%= render 'shared/stream' %>
+    </div>    
+  </div>
+<% else %>
+<div class="frontpage-row">
+    <div class="callout panel radius center frontpage-panel">
+    <h2>WELCOME</h2>
+    <h3>TO</h3>
+    <h1>MIXEGO</h1>
+    <hr />
+    <%= link_to " Login ", login_path, class: "button secondary radius" %>
+    <%= link_to "Sign Up", signup_path, class: "button radius" %>
+    </div>
+</div>
+<% end %>

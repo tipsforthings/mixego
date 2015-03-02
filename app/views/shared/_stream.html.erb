@@ -1,0 +1,9 @@
+
+<% if @stream_items.any? %>
+  <br />
+    <%= paginate @stream_items, :window => 1, :param_name => :stream %>
+  <ol class="microposts">
+    <h4 class="subheader center">Audio Stream</h4>
+  <%= render @stream_items, :window => 1, :param_name => :stream %>
+  </ol>
+<% end %>

@@ -72,6 +72,14 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "associated tracks should be destroyed" do
+    @user.save
+    @user.tracks.create!(title: "Lorem Ipsum", description: "Lorem ipsum", user_id: @user.id)
+    assert_difference 'Track.count', -1 do
+      @user.destroy
+    end
+  end
+
   test "should follow and unfollow a user" do
     michael = users(:michael)
     archer  = users(:archer)

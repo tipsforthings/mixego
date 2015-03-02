@@ -1,6 +1,6 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="medium-4 columns">
+  <aside class="medium-3 columns">
     <section class="user_info">
       <%= gravatar_for @user %>
       <h1><%= @user.username %></h1>
@@ -18,13 +18,13 @@
       <% end %>
     </section>
   </aside>
-  <div class="medium-8 columns">
+  <div class="medium-9 columns">
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users follow">
         <%= render @users %>
       </ul>
-      <%= will_paginate %>
+      <%= paginate @users, :window => 1, :param_name => :page %>
     <% end %>
   </div>
 </div>

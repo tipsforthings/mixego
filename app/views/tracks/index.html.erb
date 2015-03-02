@@ -1,46 +1,25 @@
-  <div class="row">
-    <div class="medium-4 columns">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-    </div>
-    <div class="medium-8 columns">
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Tracks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Genre</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tracks.each do |track| %>
-      <tr>
-        <td><%= track.title %></td>
-        <td><%= track.description %></td>
-        <td><%= track.genre_id %></td>
-        <td><%= track.user_id %></td>
-        <td><%= link_to 'Show', track %></td>
-        <td><%= link_to 'Edit', edit_track_path(track) %></td>
-        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% provide(:title, "Tracks") %>
+<div class="row">
+  <aside class="medium-3 columns">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.username %>
+      </h1>
+      <%= @user.email %>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="medium-9 columns">
+    <% if @user.tracks.any? %>
+      <h2 class="center">Tracks</h2>
+      <%= paginate @tracks, :window => 1, :param_name => :tracks %>
+      <ol class="microposts">
+        <%= render @tracks %>
+      </ol>
+      <%= paginate @tracks, :window => 1, :param_name => :tracks %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Track', new_track_path %>
-    </div>    
   </div>
-
+</div>

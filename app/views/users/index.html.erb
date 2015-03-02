@@ -1,6 +1,6 @@
 <% provide(:title, 'All Users') %>
 <div class="row">
-  <aside class="medium-4 columns">
+  <aside class="medium-3 columns">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -8,13 +8,14 @@
         <%= render 'shared/stats' %>
       </section>
   </aside>
-  <div class="medium-8 columns">
-<h2 class="center">All Users</h2>
-<%= foundation_paginate @users %>
-<ul class="users">
+  <div class="medium-9 columns">
+    <h2 class=" center">All Users</h2>
+  <br />
+<%= paginate @users, :window => 1, :param_name => :page %>
+<ol class="users microposts">
     <%= render @users %>
-</ul>
+</ol>
 <br />
-<%= foundation_paginate @users %>
+<%= paginate @users, :window => 1, :param_name => :page %>
 </div>
 </div>

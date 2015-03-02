@@ -14,15 +14,15 @@ gem 'bcrypt'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 gem 'foundation-rails'
-gem 'will_paginate'
+# gem 'will_paginate'
 gem 'faker',                   '1.4.2'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
 gem 'fog'
 gem 'simple_form'
 gem 'country_select'
-gem 'foundation-will_paginate'
-
+gem 'kaminari'
+# gem 'jquery-infinite-pages'
 group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'

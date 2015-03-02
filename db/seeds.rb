@@ -41,6 +41,14 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.microposts.create!(content: content) }
 end
 
+# Tracks
+users = User.order(:created_at).take(6)
+50.times do
+  title = Faker::Name.title
+  description = Faker::Lorem.sentence(5)
+  users.each { |user| user.tracks.create!(title: title, description: description) }
+end
+
 # Following relationships
 users = User.all
 user  = users.first

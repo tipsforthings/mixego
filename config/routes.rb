@@ -1,24 +1,30 @@
 Rails.application.routes.draw do
-  resources :tracks
+
+  resources :examples
+  concern :paginatable do
+    get '(page/:page)', :action => :index, :on => :collection, :as => ''
+  end
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get 'signup'  => 'users#new'
+  resources :microposts,          only: [:index, :show, :new, :create, :destroy], :concerns => :paginatable
   resources :users do
     member do
       get :following, :followers
+      resources :tracks,              only: [:index, :show, :create, :destroy]
     end
   end
+
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'welcome#index', :concerns => :paginatable
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
